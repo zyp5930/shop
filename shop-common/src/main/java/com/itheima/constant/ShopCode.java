@@ -24,9 +24,9 @@ public enum ShopCode {
     SHOP_ORDER_INVALID(false, 3, "订单无效"),
     //订单已取消
     SHOP_ORDER_RETURNED(false, 4, "订单已退货"),
-    //订单已付款
+    //订单未付款
     SHOP_ORDER_PAY_STATUS_NO_PAY(true,0,"订单未付款"),
-    //订单已付款
+    //订单正在付款
     SHOP_ORDER_PAY_STATUS_PAYING(true,1,"订单正在付款"),
     //订单已付款
     SHOP_ORDER_PAY_STATUS_IS_PAY(true,2,"订单已付款"),

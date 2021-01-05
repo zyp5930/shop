@@ -9,6 +9,9 @@ public class TradeOrder implements Serializable {
 
     private Long userId;
 
+    /**
+     * 订单状态
+     */
     private Integer orderStatus;
 
     private Integer payStatus;
@@ -19,26 +22,56 @@ public class TradeOrder implements Serializable {
 
     private String consignee;
 
+    /**
+     * 商品ID
+     */
     private Long goodsId;
 
+    /**
+     * 商品数量
+     */
     private Integer goodsNumber;
 
+    /**
+     * 商品单价
+     */
     private BigDecimal goodsPrice;
 
     private Long goodsAmount;
 
+    /**
+     * 运费
+     */
     private BigDecimal shippingFee;
 
+    /**
+     * 订单总金额
+     */
     private BigDecimal orderAmount;
 
+    /**
+     * 优惠券ID
+     */
     private Long couponId;
 
+    /**
+     * 优惠券金额
+     */
     private BigDecimal couponPaid;
 
+    /**
+     * 余额
+     */
     private BigDecimal moneyPaid;
 
+    /**
+     * 订单支付金额
+     */
     private BigDecimal payAmount;
 
+    /**
+     * 下单时间
+     */
     private Date addTime;
 
     private Date confirmTime;

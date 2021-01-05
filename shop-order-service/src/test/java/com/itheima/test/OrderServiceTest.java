@@ -30,11 +30,11 @@ public class OrderServiceTest {
         order.setGoodsId(goodsId);
         order.setUserId(userId);
         order.setCouponId(coupouId);
-        order.setAddress("北京");
+        order.setAddress("杭州");
         order.setGoodsNumber(1);
-        order.setGoodsPrice(new BigDecimal(1000));
+        order.setGoodsPrice(new BigDecimal(5000));
         order.setShippingFee(BigDecimal.ZERO);
-        order.setOrderAmount(new BigDecimal(1000));
+        order.setOrderAmount(new BigDecimal(5000));
         order.setMoneyPaid(new BigDecimal(100));
         orderService.confirmOrder(order);
 

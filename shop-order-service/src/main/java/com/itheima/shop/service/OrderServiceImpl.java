@@ -153,6 +153,10 @@ public class OrderServiceImpl implements IOrderService {
     private void updateCouponStatus(TradeOrder order) {
         if(order.getCouponId()!=null){
             TradeCoupon coupon = couponService.findOne(order.getCouponId());
+            //需要加一个判断 如果优惠券使用过则不可再次使用 zhuyp
+            if (coupon.getOrderId() != null) {
+                CastException.cast(ShopCode.SHOP_COUPON_USE_FAIL);
+            }
             coupon.setOrderId(order.getOrderId());
             coupon.setIsUsed(ShopCode.SHOP_COUPON_ISUSED.getCode());
             coupon.setUsedTime(new Date());
@@ -239,7 +243,7 @@ public class OrderServiceImpl implements IOrderService {
                 CastException.cast(ShopCode.SHOP_COUPON_NO_EXIST);
             }
             //6.2 判断优惠券是否已经被使用
-            if(coupon.getIsUsed().intValue()==ShopCode.SHOP_COUPON_ISUSED.getCode().intValue()){
+            if (coupon.getIsUsed().intValue() == ShopCode.SHOP_COUPON_ISUSED.getCode().intValue()) {
                 CastException.cast(ShopCode.SHOP_COUPON_ISUSED);
             }
 

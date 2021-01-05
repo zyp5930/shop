@@ -35,10 +35,11 @@ public class GoodsServiceImpl implements IGoodsService {
     @Override
     public Result reduceGoodsNum(TradeGoodsNumberLog goodsNumberLog) {
         if (goodsNumberLog == null ||
-                goodsNumberLog.getGoodsNumber() == null ||
+                goodsNumberLog.getGoodsId() == null ||
                 goodsNumberLog.getOrderId() == null ||
                 goodsNumberLog.getGoodsNumber() == null ||
                 goodsNumberLog.getGoodsNumber().intValue() <= 0) {
+            //报错是如何统一处理的
             CastException.cast(ShopCode.SHOP_REQUEST_PARAMETER_VALID);
         }
         TradeGoods goods = goodsMapper.selectByPrimaryKey(goodsNumberLog.getGoodsId());
